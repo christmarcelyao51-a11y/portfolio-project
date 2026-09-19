@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Node.js">
+  <path fill="#68A063" d="M32 4 57 18.5v29L32 62 7 47.5v-29L32 4Z"/>
+  <path fill="#fff" d="m32 13 17 9.8v19.7L32 52.3l-8.7-5v-7.1l5 2.9v1.4l3.7 2.1 8.5-4.9V26.4L32 21.5l-8.7 5v5.8l-5-2.9v-6.6L32 13Z"/>
+  <path fill="#fff" d="M37 29.7v9.7l-5 2.9-5-2.9v-5.8l5-2.9 5 2.9v-3.9Z"/>
+</svg>
