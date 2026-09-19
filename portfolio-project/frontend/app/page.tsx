@@ -45,7 +45,7 @@ export default async function HomePage() {
           <div className="relative">
             <p className="reveal-item inline-flex items-center gap-2 rounded-full border border-signal/30 bg-signal/10 px-3 py-1 font-body text-xs uppercase tracking-[0.2em] text-signal">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-signal" />
-              Abidjan, Côte d'Ivoire
+              Bouaké, Côte d'Ivoire
             </p>
             <h1 className="mt-4 font-display text-5xl leading-[1.05] text-cream md:text-7xl">
               Christ Marcel

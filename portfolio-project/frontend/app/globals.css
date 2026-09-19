@@ -145,6 +145,10 @@ main {
   overflow: hidden;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
 .section-kicker {
   font-family: monospace;
   font-size: 0.7rem;
@@ -483,4 +487,40 @@ main {
 @keyframes menu-drop {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 767px) {
+  .language-field {
+    opacity: 0.22;
+  }
+
+  .language-grid,
+  .language-radar,
+  .language-orbit {
+    animation-duration: 60s;
+  }
+
+  .language-chip {
+    font-size: 0.55rem;
+    transform: scale(0.82);
+  }
+
+  .glow-orb,
+  .ambient-backdrop {
+    animation: none;
+  }
+
+  .tech-card:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce), (max-width: 767px) {
+  .scan-line,
+  .data-pulse,
+  .cursor-beam,
+  .tech-marquee,
+  .thread-path {
+    animation: none;
+  }
 }

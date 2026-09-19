@@ -20,6 +20,7 @@ export interface Project {
   live_url: string;
   repo_url: string;
   featured: boolean;
+  created_at: string;
   media_items: { id: number; media_type: "image" | "video"; file: string; caption: string }[];
 }
 

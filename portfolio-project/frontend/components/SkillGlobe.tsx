@@ -16,18 +16,28 @@ export default function SkillGlobe({ skills }: { skills: Skill[] }) {
   const items = useMemo(() => (skills.length ? skills : fallbackSkills), [skills]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [rotation, setRotation] = useState(0);
+  const [motionEnabled, setMotionEnabled] = useState(true);
   const dragStart = useRef<number | null>(null);
   const rotationStart = useRef(0);
   const active = items[activeIndex];
 
   useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateMotion = () => setMotionEnabled(!reducedMotion.matches && document.visibilityState === "visible");
+    updateMotion();
+    reducedMotion.addEventListener("change", updateMotion);
+    document.addEventListener("visibilitychange", updateMotion);
     const timer = window.setInterval(() => {
-      if (dragStart.current === null) {
+      if (motionEnabled && dragStart.current === null) {
         setRotation((current) => current + 0.35);
       }
     }, 40);
-    return () => window.clearInterval(timer);
-  }, []);
+    return () => {
+      window.clearInterval(timer);
+      reducedMotion.removeEventListener("change", updateMotion);
+      document.removeEventListener("visibilitychange", updateMotion);
+    };
+  }, [motionEnabled]);
 
   const move = (direction: number) => {
     setActiveIndex((current) => (current + direction + items.length) % items.length);

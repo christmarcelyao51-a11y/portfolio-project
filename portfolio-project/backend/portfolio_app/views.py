@@ -50,7 +50,7 @@ class SkillViewSet(viewsets.ModelViewSet):
 class ProjectViewSet(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
     permission_classes = [IsAdminOrReadOnly]
-    filterset_fields = ["featured", "status"]
+    filterset_fields = ["featured", "status", "slug"]
 
     def get_queryset(self):
         qs = Project.objects.prefetch_related("media_items")

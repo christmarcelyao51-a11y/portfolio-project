@@ -1,7 +1,7 @@
 export default function TechVisual({ compact = false }: { compact?: boolean }) {
   return (
     <div className={`tech-grid group relative overflow-hidden rounded-2xl border border-signal/25 bg-panel/80 ${compact ? "h-48" : "h-72"}`}>
-      <img src="/tech-dashboard.svg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-35 mix-blend-screen transition duration-700 group-hover:scale-105" />
+      <img src="/tech-dashboard.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-35 mix-blend-screen transition duration-700 group-hover:scale-105" />
       <div className="scan-line absolute left-0 right-0 top-0 h-px bg-signal shadow-[0_0_18px_#3e8e6e]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(62,142,110,0.16),transparent_55%)]" />
       <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full border border-brass/60 shadow-[0_0_35px_rgba(199,154,69,0.18)]">

@@ -130,6 +130,21 @@ class ContactMessage(TimeStamped):
     phone = models.CharField(max_length=20, blank=True, validators=[phone_validator])
     subject = models.CharField(max_length=160)
     message = models.TextField(max_length=4000)
+    STATUS_CHOICES = [
+        ("new", "Nouveau"),
+        ("in_progress", "En cours"),
+        ("replied", "Répondu"),
+        ("archived", "Archivé"),
+    ]
+    SOURCE_CHOICES = [
+        ("website", "Site web"),
+        ("whatsapp", "WhatsApp"),
+        ("other", "Autre"),
+    ]
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="new")
+    source = models.CharField(max_length=20, choices=SOURCE_CHOICES, default="website")
+    internal_notes = models.TextField(blank=True)
+    replied_at = models.DateTimeField(null=True, blank=True)
     is_read = models.BooleanField(default=False)
     ip_address = models.GenericIPAddressField(null=True, blank=True)
 
